@@ -22,8 +22,8 @@
 <style>
    
 .button {
-  background-color:#ffffff; 
-  color: #010105;
+  background-color:##000000; 
+  color: #white;
   padding: 15px 32px;
   text-align: center;
   display: inline-block;
@@ -36,9 +36,29 @@
   filter: alpha(opacity=90);
 }
 
-.button:hover {
-  background-color: #000000;
-  color: white;
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 0.9;
+  right: 0;
 }
   
 </style>
